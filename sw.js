@@ -1,6 +1,6 @@
 var CACHE_NAME = 'my-first-cache';
 var urlToCache = [
-	'/',
+	'/serviceworker',
 	'index.html',
 	'scripts/app.js',
 	'styles/app.css'

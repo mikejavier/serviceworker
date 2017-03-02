@@ -1,9 +1,9 @@
 var CACHE_NAME = 'my-first-cache';
 var urlToCache = [
-	'/',
-	'index.html',
-	'scripts/app.js',
-	'styles/app.css'
+	'./',
+	'./index.html',
+	'./scripts/app.js',
+	'./styles/app.css'
 ];
 
 // fazendo a instalação do SW

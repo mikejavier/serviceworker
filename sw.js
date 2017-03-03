@@ -16,7 +16,7 @@ self.addEventListener('install', function(e){
 });
 
 
-//Pegando eventos de rede do navegador
+// Pegando eventos de rede do navegador
 self.addEventListener('fetch', function(e){
 
 	e.respondWith(
@@ -28,4 +28,20 @@ self.addEventListener('fetch', function(e){
 			return fetch(e.request);
 		})
 	);
+});
+
+// Renovando os caches no evento "activate"
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+        	console.log(cacheName)
+        	if(cacheName !== CACHE_NAME){
+            	return caches.delete(cacheName);
+        	}
+        })
+      );
+    })
+  );
 });
